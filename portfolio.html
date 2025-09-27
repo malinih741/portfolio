@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    /* Reset & Global */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Poppins", sans-serif;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    /* Background Video */
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #00e0ff;
+    }
+
+    /* Section Styles */
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1, h2 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-style:italic;
+      max-width: 600px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    img.profile {
+      shape-image-threshold: initial;
+      width: 150px;
+      height: 250px;
+      margin-top: 15px;
+      border: 3px solid #0e0f0f;
+      border-radius: 10px;
+    }
+    #education {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#education h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #e6a3a3;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.edu-card {
+  background: #f1f0f0;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.edu-card h2 {
+  font-size: 22px;
+  color: #007bff;
+  margin-bottom: 8px;
+}
+
+.edu-card p {
+  font-size: 16px;
+  color: #555;
+  margin: 6px 0;
+}
+.skill-img {
+    width: 100px;       /* set width */
+    height: 100px;      /* set height */
+    border: 2px solid#1f1717; /* normal border */
+    border-radius: 10px;    /* smooth corners */
+    padding: 2px;
+    background: #0b0808;       /* removes checker background look */
+}
+.container 
+{
+          max-width: 600px;
+          margin: 50px auto;
+          padding: 20px 30px;
+          background: #322c2ccc;  /* light background with little transparency */
+          border-radius: 10px;
+          box-shadow:20px rgba(0, 0, 0, 0.1);
+          text-align: center;
+}
+
+    /* Buttons/Links */
+    .btn-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #00e0ff;
+      color: black;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn-link:hover {
+      background: white;
+      color: #00e0ff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
+      p { font-size: 0.95rem; }
+      img.profile { width: 120px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="web.mp4" type="video/mp4">
+  </video>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home">
+    <h1>Hello, I'm HEMAMALINI SARAVANAN</h1>
+    <p>Web Developer | Passion for Web design and Development</p>
+    <img src="hema.jpeg" alt="My Photo" class="profile">
+    <p>A dedicated BCA graduate with a strong interest in IT services, seeking to apply my foundational knowledge in a practical environment to begin a career in the tech industry. I possess basic programming knowledge in languages such as Python, HTML, CSS, JavaScript and Java. I am a quick learner with a strong desire to grow as a professional.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <!-- BCA -->
+  <div class="edu-card">
+    <h2>BCA - Bachelor of Computer Applications</h2>
+    <p><strong>DRBCCC Hindu College</strong></p>
+    <p>2022 – 2025</p>
+    <p><strong>Percentage:</strong> 80%</p>
+    <p>Coursework: Programming in Java, Database Management, Web Development, Software Engineering</p>
+  </div>
+
+  <!-- MCA -->
+  <div class="edu-card">
+    <h2>MCA - Master of Computer Applications</h2>
+    <p><strong>University of Madras (Institute of Distance Education)</strong></p>
+    <p>2025 – 2027 (Pursuing)</p>
+    <p><strong>Status:</strong> Enrolled</p>
+    <p>Focus Areas: Advanced Java, Cloud Computing, Data Structures, AI & ML, Web Technologies</p>
+  </div>
+</section>
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <p>Java Full Stack Development (Ongoing) – Greens Technologies</p>
+    <a href="certificate1.pdf" class="btn-link" target="_blank">View Certificate</a><br>
+    <p>E-Learning</p>
+    <div>
+      <p>frontend development html</p>
+        <a href="frontend development html.jpg"class="skill-img"> View</a>
+      <p>HTML Attributes and Tags</p>
+        <a href="HTML Attributes and Tags.jpg"class="skill-img">View</a>
+      <p>Python Fundamentals for Beginners</p>
+        <a href="Python Fundamentals for Beginners.jpg"class="skill-img">View</a>
+      <p>excel for beginner</p>
+        <a href="excel for beginner.jpg"class="skill-img">View</a>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Mind Marvel</p>
+    <img src="MM LOGO.jpeg" alt="LOGO" class="skill-img">
+    <a href="https://malinih741.github.io/project1/" class="btn-link" target="_blank">Live View</a>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>Java</p>
+    <a href="java.jpeg" alt="java" class="skill-img"></a>
+    HTML
+       <a href="HTML.jpeg" alt="HTML" class="skill-img"></a> 
+    <p>CSS</p>
+       <img src="css.jpeg" alt="CSS" class="skill-img">
+    <p>JavaScript</p>
+       <img src="js.jpeg" alt="JavaScript" class="skill-img">
+    <p>React js</p>
+       <img src="reactjs.jpeg" alt="Reactjs" class="skill-img">
+    <p>SQL</p>
+       <img src="sql.png" alt="SQL" class="skill-img">
+   <div class="sparkles"></div>
+  </section>
+
+  <section id="achievements">
+    <h2>Achievements</h2>
+    <p>🏆Certificate of Appreciation – DRBCCC Hindu College 
+Recognized for outstanding dedication and contribution during the one-week Community Development Program titled "Perspective Skills on Programming" conducted for 11th and 12th students at Avadi  Girls Higher Secondary School.</p>
+    <br>
+    <p>🏆Web Technology Text Book 
+Published a Web Technology textbook specifically designed for University of Madras students, aligning with the academic syllabus. </p>
+    <br>
+    <p>🏆Placement Coordinator – DRBCCC Hindu College 
+Supported over 50 students in resume building and placement preparation, contributing to the overall success of the placement process.</p> 
+    <br>
+    <p>🏆Centre for Climate Literacy and Campaign 
+Led the artistic team in designing impactful visual campaigns to promote climate literacy and eco awareness within the college community. Created posters, banners, and digital artwork for environmental events and campaigns organized by the Centre for Climate Literacy.</p>
+    <br>
+    <p>🏆Participant in International Conference on Emerging Technologies 
+Participated in a conference discussing important topics such as crime against women, showcasing strong analytical and presentation skills.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <h1>Get In Touch</h1>
+     <div class="container">
+         <form action="#" method="POST">
+           <input type="text" name="name" placeholder="Your Name" required>
+           <br>
+           <input type="email" name="email" placeholder="Your Email" required>
+           <br>
+           <textarea name="message" placeholder="Your Message" required></textarea>
+           <br>
+           <button type="submit">Send Message</button>
+    </form>
+</div>
+  </section>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const boxTop = sec.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          sec.classList.add("show");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>
