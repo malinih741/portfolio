@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>portfolio</title>
+  <title>Portfolio</title>
   <style>
     * {
       margin: 0;
@@ -15,14 +14,24 @@
       height: 100vh;
       font-family: Arial, sans-serif;
       color: white;
-      background-video: url("main page.mp4"); 
-    
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;  /* Move content to bottom */
-      align-items: center;        /* Center horizontally */
+      justify-content: flex-end; /* content bottom */
+      align-items: center;       /* center horizontally */
       text-align: center;
-      padding-bottom: 100px;      /* Space from bottom */
+      padding-bottom: 100px;
+      overflow: hidden;          /* hide scroll */
+    }
+
+    /* Fullscreen video background */
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1; /* video back la irukum */
     }
 
     a {
@@ -42,6 +51,14 @@
   </style>
 </head>
 <body>
+  <!-- Video background -->
+  <video autoplay muted loop>
+    <source src="main page.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Link -->
   <a href="portfolio.html">Go to Home</a>
 </body>
 </html>
+
