@@ -10,29 +10,19 @@
       box-sizing: border-box;
     }
 
-    body
-      {
+    body {
       height: 100vh;
       font-family: Arial, sans-serif;
       color: white;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end; /* content bottom */
-      align-items: center;       /* center horizontally */
+      justify-content: center;   /* center horizontally */
+      align-items: center;       /* center vertically */
       text-align: center;
-      padding-bottom: 100px;
       overflow: hidden;          /* hide scroll */
-    }
-
-    /* Fullscreen video background */
-    video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: -1; /* video back la irukum */
+      
+      /* background image full screen fixed */
+      background: url("background.jpeg") no-repeat center center fixed;
+      background-size: cover;
     }
 
     a {
@@ -52,13 +42,6 @@
   </style>
 </head>
 <body>
-  <!-- Video background -->
-  <video autoplay muted loop>
-    <source src="main page.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <!-- Link -->
   <a href="portfolio.html">Go to Home</a>
 </body>
 </html>
-
